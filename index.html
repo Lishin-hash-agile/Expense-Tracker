@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker Dashboard</title>
+  <link rel="stylesheet" href="assets/style.css">
+
+  <!-- Chart.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Expense Tracker</h1>
+
+    <!-- Add Expense Form -->
+    <div class="form-box">
+      <input type="text" id="title" placeholder="Expense Title">
+      <input type="number" id="amount" placeholder="Amount">
+      <select id="category">
+        <option value="">Select Category</option>
+        <option value="Food">Food</option>
+        <option value="Travel">Travel</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Bills">Bills</option>
+      </select>
+      <button id="addBtn">Add Expense</button>
+    </div>
+
+    <!-- Filter -->
+    <div class="filter-box">
+      <select id="filterCategory">
+        <option value="">All</option>
+        <option value="Food">Food</option>
+        <option value="Travel">Travel</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Bills">Bills</option>
+      </select>
+    </div>
+
+    <!-- Total -->
+    <h2>Total: ₹<span id="total">0</span></h2>
+
+    <!-- Chart -->
+    <h2>Category Chart</h2>
+    <canvas id="expenseChart"></canvas>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Amount</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody id="expenseTable"></tbody>
+    </table>
+
+    <button id="exportBtn" class="export">Export as JSON</button>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
+
+
+
+
+ 
