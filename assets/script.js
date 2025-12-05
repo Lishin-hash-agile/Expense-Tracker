@@ -1,18 +1,18 @@
 let expenses = [];
-// Selectors
+
 const title = document.getElementById("title");
 const amount = document.getElementById("amount");
-const category = document.getElementById("category");
+// const category = document.getElementById("category");
 const addBtn = document.getElementById("addBtn");
 const filterCategory = document.getElementById("filterCategory");
 const totalAmount = document.getElementById("total");
 const expenseTable = document.getElementById("expenseTable");
 const exportBtn = document.getElementById("exportBtn");
-let chart; 
+let chart;
 
 // Add Expense
 addBtn.addEventListener("click", () => {
-  if (title.value === "" || amount.value === "" || category.value === "") {
+  if (title.value === "" || amount.value === "") {
     alert("Please fill all fields");
     return;
   }
@@ -20,7 +20,7 @@ addBtn.addEventListener("click", () => {
   const expense = {
     title: title.value,
     amount: Number(amount.value),
-    category: category.value
+    
   };
 
   expenses.push(expense);
@@ -30,7 +30,7 @@ addBtn.addEventListener("click", () => {
 
   title.value = "";
   amount.value = "";
-  category.value = "";
+  
 });
 
 // Show Expenses in Table 
@@ -42,7 +42,7 @@ function renderTable(list) {
       <tr>
         <td>${item.title}</td>
         <td>₹${item.amount}</td>
-        <td>${item.category}</td>
+      
       </tr>
     `;
     expenseTable.innerHTML += row;
@@ -83,13 +83,9 @@ exportBtn.addEventListener("click", () => {
 
 // Chart.js - Category Chart
 function updateChart(dataList = expenses) {
-  const categories = ["Food", "Travel", "Shopping", "Bills"];
+  const labels = dataList.map()(item=>item.title)
 
-  const totals = categories.map(arr =>
-    dataList
-      .filter(exp => exp.category === arr)
-      .reduce((sum, item) => sum + item.amount, 0)
-  );
+  const totals = dataList.map(item => item.amount);
 
   const ctx = document.getElementById("expenseChart").getContext("2d");
 
@@ -98,7 +94,7 @@ function updateChart(dataList = expenses) {
   chart = new Chart(ctx, {
     type: "pie",
     data: {
-      labels: categories,
+      labels: labels,
       datasets: [{
         data: totals,
         backgroundColor: [
@@ -114,3 +110,12 @@ function updateChart(dataList = expenses) {
     }
   });
 }
+
+
+
+
+
+
+
+
+

@@ -6,29 +6,29 @@
   <title>Expense Tracker Dashboard</title>
   <link rel="stylesheet" href="assets/style.css">
 
-  <!-- Chart.js Library -->
+  
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container">
     <h1>Expense Tracker</h1>
 
-    <!-- Add Expense Form -->
+   
     <div class="form-box">
       <input type="text" id="title" placeholder="Expense Title">
       <input type="number" id="amount" placeholder="Amount">
-      <select id="category">
+      <!-- <select id="category">
         <option value="">Select Category</option>
         <option value="Food">Food</option>
         <option value="Travel">Travel</option>
         <option value="Shopping">Shopping</option>
         <option value="Bills">Bills</option>
-      </select>
+      </select> -->
       <button id="addBtn">Add Expense</button>
     </div>
 
-    <!-- Filter -->
-    <div class="filter-box">
+   
+    <!-- <div class="filter-box">
       <select id="filterCategory">
         <option value="">All</option>
         <option value="Food">Food</option>
@@ -36,22 +36,22 @@
         <option value="Shopping">Shopping</option>
         <option value="Bills">Bills</option>
       </select>
-    </div>
+    </div> -->
 
-    <!-- Total -->
+   
     <h2>Total: ₹<span id="total">0</span></h2>
 
-    <!-- Chart -->
+  
     <h2>Category Chart</h2>
     <canvas id="expenseChart"></canvas>
 
-    <!-- Table -->
+   
     <table>
       <thead>
         <tr>
           <th>Title</th>
           <th>Amount</th>
-          <th>Category</th>
+         
         </tr>
       </thead>
       <tbody id="expenseTable"></tbody>
